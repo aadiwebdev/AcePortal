@@ -47,6 +47,6 @@ app.use(function (req, res, next) {
     res.status(err.status || 500);
     res.send(err.message);
   });
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log("HI welcome to express Js\n");
 });
