@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ace Student</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="ace student portal">
+    <meta name="author" content="fudio">
+    
+    <link rel="shortcut icon" href="img/ACE.jpg" type="image/x-icon">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+  
+    <link rel="stylesheet" href="css/nivo-lightbox.css" >
+    <link rel="stylesheet" href="css/nivo_lightbox_themes/default/default.css">
+
+
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css"  href="css/style1.css">
+    <link rel="stylesheet" type="text/css" href="css/animate1.css">
+
+    <!-- Google Fonts
+    ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+
+    <script>
+    $(document).ready(function(){
+      $("#sid").click(function(){
+        $(".main-login").css("display","none");
+        $(".student-modal").css("display","block");
+      });
+      $("#fid").click(function(){
+        $(".main-login").css("display","none");
+        $(".faculty-modal").css("display","block");
+      });
+      $("#pid").click(function(){
+        $(".main-login").css("display","none");
+        $(".parent-modal").css("display","block");
+      });
+      $("#adminid").click(function(){
+        $(".main-login").css("display","none");
+        $(".admin-modal").css("display","block");
+      });
+    });
+    </script>
+    <script>
+      function startLogin()
+      {
+        $(".trans_mainpage").fadeIn("fast");
+      }
+      function closeModal()
+      {
+        $(".trans_mainpage").fadeOut("fast");
+      }
+
+    </script>
+   
+  </head>
+  <body>
+    <div class="trans_mainpage">
+        <span class="close" onclick="closeModal()">&times;</span>
+      <div class="main-login">
+    <div class="login-box animated fadeInUp"style="display: block">
+			<div class="box-header">
+				<h2>Are you a ??</h2>
+			</div>
+			<div class="row pad-10">
+    <div class="col-md-3 col-sm-3 col-xs-6 row-100"> <a href="#" class="btn btn-sm animated-button victoria-one" id ="sid">Student Login</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 row-100"> <a href="#" class="btn btn-sm animated-button victoria-two" id ="pid">Parent Login</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 row-100"> <a href="#" class="btn btn-sm animated-button victoria-three" id ="fid">Faculty Login</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 row-100"> <a href="#" class="btn btn-sm animated-button victoria-four" id ="adminid">Admin Login</a> </div>
+  </div>
+    </div>
+  </div>
+    <div class="faculty-modal" style="display:none">
+      <div class="login-box animated fadeInUp">
+        <div class="box-header">
+          <h2>Faculty Login</h2>
+        </div>
+        <form action="/faculty" method="post">
+        <label for="username">Username</label>
+        <br/>
+        <input type="text" id="username" name="name">
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input type="password" id="password" name="password">
+        <br/>
+        <button type="submit">Sign In</button>
+        <br/>
+        </form>
+        <a href="#"><p class="small">Forgot your password?</p></a>
+      </div>
+    </div>
+    <div class="student-modal" style="display:none">
+      <div class="login-box animated fadeInUp">
+        <div class="box-header">
+          <h2>Student Login</h2>
+        </div>
+        <form action="/student" method="post">
+        <label for="username">Username</label>
+        <br/>
+        <input type="text" id="username" name="name">
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input type="password" id="password" name="password">
+        <br/>
+        <button type="submit">Sign In</button>
+        <br/>
+      </form>
+        <a href="#"><p class="small">Forgot your password?</p></a>
+      </div>
+    </div>
+    <div class="admin-modal" style="display:none">
+      <div class="login-box animated fadeInUp">
+        <div class="box-header">
+          <h2>Admin Login</h2>
+        </div>
+        <form action="/admin" method="post">
+        <label for="username">Username</label>
+        <br/>
+        <input type="text" id="username" name="name">
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input type="password" id="password" name="password">
+        <br/>
+        <button type="submit">Sign In</button>
+        <br/>
+      </form>
+        <a href="#"><p class="small">Forgot your password?</p></a>
+      </div>
+    </div> 
+    <div class="parent-modal" style="display:none">
+      <div class="login-box animated fadeInUp">
+        <div class="box-header">
+          <h2>Parent Login</h2>
+        </div>
+        <form action="/parent" method="post">
+        <label for="username">Username</label>
+        <br/>
+        <input type="text" id="username" name="name">
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input type="password" id="password" name="password">
+        <br/>
+        <button type="submit">Sign In</button>
+        <br/>
+        </form>
+        <a href="#"><p class="small">Forgot your password?</p></a>
+      </div>
+    </div>
+</div>
+     
+<nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="img/ace1.png" alt="..."></a>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#tf-home" class="scroll">Home</a></li>
+                            <li><a href="#tf-process1" class="scroll">my info</a></li>
+
+            <li><a href="#tf-works" class="scroll">Time-table</a></li>
+            <li><a href="#tf-process" class="scroll">News</a></li>
+            <li><a href="#tf-blog" class="scroll">Notices</a></li>
+            <li><a href="#tf-contact" class="scroll">Contact us</a></li>
+            <% if (userInfo.name.length!=0){%>
+              <li><a href="/logout" class="scroll">Hello <%=userInfo.name%></a></li>
+            <%}%>
+          </ul>
+        </div>
+    </div>
+</nav>
+
+    <%- include('./home.ejs')%>
+
+    <!-- Intro Section
+    ================================================== -->
+    <%- include('./intro.ejs')%>
+
+    <!-- my info pillagada
+    ================================================== -->
+    <% if(userInfo.name.length!=0){%>
+      <div id="tf-process1">
+
+          <div id="tf-features">
+      
+              <div class="container">
+                  <div class="section-header">
+                      <h2>MY<span class="highlight"><strong>INFO</strong></span></h2>
+                      <h5><em>Have a smile</em></h5>
+                      <div class="fancy"><span><img src="img/favicon.png" alt="..."></span></div>
+                  </div>
+              </div>
+      
+      <div id="feature" class="gray-bg"> 
+                  <div class="container">
+                      <div class="row" role="tabpanel"> 
+                          <div class="col-md-4 col-md-offset-1"> 
+      
+                              <ul class="features nav nav-pills nav-stacked" role="tablist">
+                                  <li role="presentation" class="active">  
+                                      <a href="#f1" aria-controls="f1" role="tab" data-toggle="tab" onclick="getChart(0)">
+                                          <span class="fa fa-pencil"></span>
+                                          Internal Marks<br><small></small>
+                                      </a>
+                                  </li>
+                                  <li role="presentation"> 
+                                      <a href="#f2" aria-controls="f2" role="tab" data-toggle="tab" onclick="getChart(1)">
+                                          <span class="fa fa-pencil"></span>
+                                          External Marks<br><small></small>
+                                      </a>
+                                  </li>
+                                  <li role="presentation"> 
+                                      <a href="#f3" aria-controls="f3" role="tab" data-toggle="tab" onclick="getPie()">
+                                          <span class="fa fa-pencil"></span>
+                                          Attendence<br><small></small>
+                                      </a>
+                                  </li>
+                                  <li role="presentation"> 
+                                      <a href="#f4" aria-controls="f4" role="tab" data-toggle="tab" onclick="getChart(2)">
+                                          <span class="fa fa-pencil"></span>
+                                          Remarks<br><small></small>
+                                      </a>
+                                  </li>
+                                  
+                              </ul>
+      
+                          </div>
+      
+                          <div class="col-md-6"> 
+                              
+                              <div class="tab-content features-content"> 
+                                  <div role="tabpanel" class="tab-pane fade in active" id="f1"> 
+                                      <div class="chart-container">
+                                          <canvas id="chart0"></canvas>
+                                      </div>
+                                                    </div>
+                                  <div role="tabpanel" class="tab-pane fade" id="f2">
+                                      <div class="chart-container">
+                                          <canvas id="chart1"></canvas>
+                                      </div>
+                                                    </div>
+                                  <div role="tabpanel" class="tab-pane fade" id="f3"> 
+                                      <div class="chart-container">
+           
+                                      <canvas id="canvas1"></canvas>
+                                      </div>
+                                  </div>
+                                  <div role="tabpanel" class="tab-pane fade" id="f4">
+                                      <div class="chart-container">
+                                          <canvas id="chart2"></canvas>
+                                      </div>
+                                </div>
+                              </div>
+                          </div>
+      
+                      </div> 
+                  </div> 
+              </div>
+          </div>
+      </div>    <%}%>
+    <!-- time table Section
+    ================================================== -->
+    <%- include('./timetable.ejs')%>
+    <!-- news
+    ================================================== -->
+    <%- include('./news.ejs')%>
+    <!-- notices============================= -->
+    <%- include('./notices.ejs')%>
+    <!-- Contact 
+    ================================================== -->
+    <%- include('./contact.ejs')%>
+    <!-- Footer 
+    ================================================== -->
+    <%- include('./footer.ejs')%>
+    
+
+
+    
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/owl.carousel.js"></script>
+
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+
+   
+
+    <!-- Parallax Effects -->
+    <script type="text/javascript" src="js/skrollr.js"></script>
+    <script type="text/javascript" src="js/imagesloaded.js"></script>
+
+    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+
+    <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+
+    <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+<% if(userInfo.name.length>0){%>
+<script>
+  var initData = JSON.parse('<%-JSON.stringify(data)%>');
+  var getUser =JSON.parse('<%-JSON.stringify(userInfo)%>');
+  var rollno=null;
+  var result={};
+  const dataPacket=[];
+  const keyPacket=[];
+  const type=["Internal Marks","External Marks","Attendance","Remarks"];
+  
+  for(var i =0;i<initData[0].length;i++)
+  {
+    if(getUser.email===initData[0][i].email)
+     {
+      result.rollno =initData[0][i].rollno;
+      break;
+     }
+  }
+  for(var i=0;i<initData[1].length;i++)
+  {
+
+    if(result.rollno===initData[1][i].RollNo)
+    {
+      delete initData[1][i].RollNo;
+      result.imarks=initData[1][i];
+      break;
+    }
+  }
+  for(var i=0;i<initData[2].length;i++)
+  {
+    if(result.rollno===initData[2][i].RollNo)
+    {
+      delete initData[2][i].RollNo;
+      result.emarks=initData[2][i]; 
+      break;
+    }
+  }
+  for(var i=0;i<initData[3].length;i++)
+  {
+    if(result.rollno===initData[3][i].RollNo)
+    {
+      
+      result.attendance=initData[3][i].Attendance; 
+      break;
+    }
+  }
+  for(var i=0;i<initData[4].length;i++)
+  {
+    if(result.rollno===initData[4][i].RollNo)
+    {
+      delete initData[4][i].RollNo; 
+      result.remarks=initData[4][i];; 
+      break;
+    }
+  }
+  keyPacket.push(Object.keys(result.imarks));
+  keyPacket.push(Object.keys(result.emarks));
+  keyPacket.push(Object.keys(result.remarks));
+  dataPacket.push(Object.values(result.imarks));
+  dataPacket.push(Object.values(result.emarks));
+  dataPacket.push(Object.values(result.remarks));
+
+ console.log(type);
+ console.log(keyPacket);
+ console.log(dataPacket);
+
+</script>
+<%}%>
+    <script>
+      function getChart(id)
+      {
+              var data = {
+          labels:keyPacket[+id],
+          datasets: [{
+            label:type[+id],
+            backgroundColor: "#379ede",
+            borderColor: "#2772a0",
+            borderWidth: 2,
+            hoverBackgroundColor: "#379ede",
+            hoverBorderColor: "#2772a0",
+            data: dataPacket[+id],
+          }]
+          };
+
+            var options = {
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [{
+                stacked: true,
+                gridLines: {
+                  display: true,
+                  color: "#379ede"
+                }
+              }],
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }]
+            }
+            };
+
+            Chart.Bar('chart'+ +id, {
+            options: options,
+            data: data
+            });
+}
+function getPie()
+{
+  // Doughnut Chart 
+$(document).ready(function(){
+	var options = {
+		// legend: false,
+		responsive: true
+	};
+	new Chart($("#canvas1"), {
+		type: 'doughnut',
+		tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+		data: {
+		labels: [
+			"attended",
+			"absent"
+		],
+		datasets: [{
+		data: [+result.attendance,100-+result.attendance],
+		backgroundColor: [
+			"#9B59B6",
+			"#E74C3C"
+		],
+		hoverBackgroundColor: [
+			"#B370CF",
+			"#E95E4F"
+		]
+		}]
+	},
+		options: { responsive: true }
+	});           
+});
+// Doughnut Chart 
+}
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="img/ace1.png" alt="..."></a>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#tf-home" class="scroll">Home</a></li>
+                            <li><a href="#tf-process1" class="scroll">my info</a></li>
+
+            <li><a href="#tf-works" class="scroll">Time-table</a></li>
+            <li><a href="#tf-process" class="scroll">News</a></li>
+            <li><a href="#tf-blog" class="scroll">Notices</a></li>
+            <li><a href="#tf-contact" class="scroll">Contact us</a></li>
+            <% if (userInfo.length!=0){%>
+              <li><a href="/logout" class="scroll">Hello <%=userInfo.name%></a></li>
+            <%}%>
+          </ul>
+        </div>
+    </div>
+</nav>
